@@ -5,10 +5,10 @@ test('Close cookies banner', async ({page}) => {
     await page.getByRole('button', { name: 'OK ', exact: true }).click();
 });
 
-test('Close cookies banner', async ({page}) => {
-    await page.goto('https://www.udemy.com/');
-    await page.pause();
-});
+// test('Close cookies banner', async ({page}) => {
+//     await page.goto('https://www.udemy.com/');
+//     await page.pause();
+// });
 
 
 test('Browser ficture', async ({ browser }) => {
