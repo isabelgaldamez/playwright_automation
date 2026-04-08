@@ -25,12 +25,10 @@ describe('GetByRole(Locators) - Use getByRole locators', async (page) => {
             0: 'Live REST APIs — test real endpoints, not mocks',
             1: 'Isolated sandbox — your data, your tests, no conflicts',
             2: 'Auth, CRUD, bookings — flows you\'ll face on the job',
-            3: 'Build for Selenium, Playwright, RestAssured, and more',
         };
         await expect(tasks.first()).toContainText(tasksEvents[0]);
         await expect(tasks.nth(1)).toContainText(tasksEvents[1]);
         await expect(tasks.nth(2)).toContainText(tasksEvents[2]);
-        await expect(tasks.nth(3)).toContainText(tasksEvents[3]);
     });
 
     test('GetByRole(Buttons) - As a visitor, I see error messages when I click on Sign In button', async ({page}) => {

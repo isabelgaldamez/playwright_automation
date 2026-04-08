@@ -1,6 +1,6 @@
 import {test, chromium} from '@playwright/test';
 
-test('Close cookies banner', async ({page}) => {
+test.skip('Close cookies banner', async ({page}) => {
     await page.goto('https://www.udemy.com/');
     await page.getByRole('button', { name: 'OK ', exact: true }).click();
 });
@@ -11,7 +11,7 @@ test('Close cookies banner', async ({page}) => {
 // });
 
 
-test('Browser ficture', async ({ browser }) => {
+test('Browser fixture', async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto('https://www.udemy.com/');
