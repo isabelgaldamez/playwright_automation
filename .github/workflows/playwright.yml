@@ -17,12 +17,16 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Create .env file from GitHub Secrets
+      run: | 
+        echo "TEST_USER_EMAIL=${{secrets.TEST_USER_EMAIL}}" >> .env
+        echo "TEST_USER_PASSWORD=${{secrets.TEST_USER_PASSWORD}}" >> .env
     - name: Run Playwright tests
       run: npx playwright test
-      env:
+      # env:
         # Map GitHub Secrets to environment variables for the test run
-        TEST_USER_EMAIL: ${{ TEST_CREDENTIALS.TEST_USER_EMAIL }}
-        TEST_USER_PASSWORD: ${{ TEST_CREDENTIALS.TEST_USER_PASSWORD }}
+        # TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+        # TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
