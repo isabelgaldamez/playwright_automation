@@ -19,6 +19,10 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        # Map GitHub Secrets to environment variables for the test run
+        TEST_USER_EMAIL: ${{ TEST_CREDENTIALS.TEST_USER_EMAIL }}
+        TEST_USER_PASSWORD: ${{ TEST_CREDENTIALS.TEST_USER_PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
