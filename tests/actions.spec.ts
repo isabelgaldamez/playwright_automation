@@ -12,6 +12,12 @@ describe('Actions - Use actions to interact with elements', async (page) => {
         await page.getByRole('button', {name: 'Sign In'}).click();
         let itemCenter = await page.locator('div.items-center.gap-1 > a').first();
         await expect(itemCenter).toBeVisible();
+
+        let isEventCreated = await page.getByTestId('delete-event-btn').isVisible({timeout: 3000});  
+        if (isEventCreated) {
+            await page.getByTestId('delete-event-btn').click();
+            await page.getByTestId('confirm-dialog-yes').click();
+        }
     });
 
     test('Actions - As a user, I see the header menu', async ({page}) => { 

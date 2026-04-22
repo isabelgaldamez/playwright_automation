@@ -11,7 +11,7 @@ describe('GetByText - Use getByText locators', async (page) => {
     // GetByText can be used for dynamic text in the application.
     test('GetByText - As a visitor, I want to read the heading text of Registration page', async ({page}) => {
         const titleText = page.getByText('Create your account');
-        expect(titleText).toBeVisible();
+        expect(titleText).toBeVisible({timeout: 3000});
     });
     test('GetByText, validate error message at username input',async ({page}) => {
         await page.click('[data-testid="register-btn"]')
