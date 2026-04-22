@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import { describe } from 'node:test';
-require('dotenv').config();
+require('dotenv').config({path: '.env'});
 
 
 describe('Actions - Use actions to interact with elements', async (page) => {
