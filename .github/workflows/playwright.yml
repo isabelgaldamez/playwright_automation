@@ -21,8 +21,8 @@ jobs:
       run: npx playwright test
       env:
         # Map GitHub Secrets to environment variables for the test run
-        TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
-        TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+        TEST_USER_EMAIL: ${{secrets.TEST_USER_EMAIL}}
+        TEST_USER_PASSWORD: ${{secrets.TEST_USER_PASSWORD}}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
