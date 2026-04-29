@@ -76,6 +76,4 @@ describe('Actions - Use actions to interact with elements', async (page) => {
             await page.getByTestId('confirm-dialog-yes').click();
         }
     });
-
-
 });
