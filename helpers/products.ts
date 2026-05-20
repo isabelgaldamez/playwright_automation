@@ -17,14 +17,10 @@ export async function verifySuccessMessage(page : Page){
     const products = new productsLocators(page);
     const addedToCartMessage = await products.addedToCartMessage.innerText();
     const productNameMessage = await products.addedProductNameMessage.innerText();
-    // const addedToCartMessage = await page.locator("#root li > div > div:nth-child(1)").innerText();
-    // const productNameMessage = await page.locator("#root li > div div:nth-child(2)").innerText();
-    // const itemsQtyAddedToCart = await page.locator('[data-test-id="header-cart-button"] span').innerText();
-
+    
     return {
         addedToCartMessage,
-        productNameMessage,
-        // itemsQtyAddedToCart
+        productNameMessage
     }
 }
 export async function verifyQtyAddedToCart(page: Page){

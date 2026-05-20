@@ -21,7 +21,6 @@ describe('Practice checkout for Valentino\'s Magic Beans', async() => {
     test('As a visitor, I add an item to my shopping cart', async({page}) => {
         const items = await checkout.addItemToCart(page);
         const messages = await products.verifySuccessMessage(page);
-        // expect(messages.itemsQtyAddedToCart).toEqual('1');
         expect(messages.addedToCartMessage).toEqual('Added to Cart');
         expect(messages.productNameMessage).toEqual(items.productName + ' is now in your cart.');
     });
