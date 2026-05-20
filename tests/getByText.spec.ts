@@ -1,6 +1,5 @@
 import {test, expect} from '@playwright/test';
 import { describe } from 'node:test';
-import { RegisterPageLocators as reg} from '../locators/register.spec.ts';   
 
 
 describe('GetByText - Use getByText locators', async (page) => {
