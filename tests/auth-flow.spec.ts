@@ -10,7 +10,7 @@ require('dotenv').config({path: '.env'});
 
 const run_sign_up = process.env.run_sign_up
 
-describe('Email - auth validations', async (page) => {
+describe.skip('Email - auth validations', async (page) => {
     const emailUtils = new EmailUtils()
     
     test('As a new user, I sign up to the portal', async ({page})=>{

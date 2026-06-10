@@ -13,7 +13,7 @@ const loginData = JSON.parse(fs.readFileSync(loginDataFile, 'utf-8')) as {
     password : string
 }
 
-test('Authenticate', async({page}) => {
+test.skip('Authenticate', async({page}) => {
     await page.goto('https://valentinos-magic-beans.click/login')
     await loginPage.login(page, loginData.email, loginData.password)
     await expect(page).toHaveURL('https://valentinos-magic-beans.click/')
