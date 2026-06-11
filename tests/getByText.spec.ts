@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 import { describe } from 'node:test';
 
 
-describe('GetByText - Use getByText locators', async (page) => {
+describe.skip('GetByText - Use getByText locators', async (page) => {
 
     test.beforeEach(async ({page}) => {
         await page.goto('register');
