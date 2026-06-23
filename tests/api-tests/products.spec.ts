@@ -6,7 +6,7 @@ import { describe } from 'node:test'
 describe('API testing', async() => {
     test('GET - Should get all products', async({ request }) => {
         // Make HTTP request
-        const response = await request.get('/products')
+        const response = await request.get('https://api.valentinos-magic-beans.click/products')
 
         // Check status code
         expect(await response.status()).toBe(200)

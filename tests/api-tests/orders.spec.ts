@@ -21,7 +21,7 @@ const orderPayload = {
 
 describe('Orders API testing', async() => {
     test('POST - Validate place an order as a guest user', async({ request }) =>{
-        const orderResponse = await request.post('/orders', {
+        const orderResponse = await request.post('https://api.valentinos-magic-beans.click/orders', {
             data: orderPayload
         })
 

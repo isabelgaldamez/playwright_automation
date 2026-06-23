@@ -4,7 +4,7 @@ import { describe } from 'node:test'
 describe('Chained requests', async() => {
     test('GET & POST - Browse products and create an order', async({ page, request }) =>{
         // Step 1: Get all products
-        const productResponse = await request.get('/products');
+        const productResponse = await request.get('https://api.valentinos-magic-beans.click/products');
         expect(await productResponse.status()).toBe(200);
 
         const productsBody = await productResponse.json();
@@ -38,7 +38,7 @@ describe('Chained requests', async() => {
             ]
         }
         // console.log(orderPayload.items[0].productId)
-        const orderResponse = await request.post('/orders', {
+        const orderResponse = await request.post('https://api.valentinos-magic-beans.click/orders', {
             data : orderPayload
         })
 
