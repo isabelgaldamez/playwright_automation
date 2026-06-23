@@ -9,7 +9,7 @@ describe('API testing', async() => {
         const response = await request.get('/products')
 
         // Check status code
-        expect(response.status()).toBe(200)
+        expect(await response.status()).toBe(200)
 
         // check headers
         expect(response.headers()['content-type']).toBe('application/json')

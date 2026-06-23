@@ -5,7 +5,7 @@ describe('Chained requests', async() => {
     test('GET & POST - Browse products and create an order', async({ page, request }) =>{
         // Step 1: Get all products
         const productResponse = await request.get('/products');
-        expect(productResponse.status()).toBe(200);
+        expect(await productResponse.status()).toBe(200);
 
         const productsBody = await productResponse.json();
         expect(productsBody.success).toBe(true)

@@ -26,7 +26,7 @@ describe('Orders API testing', async() => {
         })
 
         // Check status code
-        expect(orderResponse.status()).toBe(201)
+        expect(await orderResponse.status()).toBe(201)
         const orderBody = await orderResponse.json();
 
         // Validate order response
