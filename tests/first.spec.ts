@@ -6,5 +6,5 @@ test('Verify heading has the correct text', async ({page}) => {
     await page.click("a[href='/docs/intro']")
     let header = await page.locator('h2').first().innerText();
 
-    await expect(header).toContain("Built for testing");
+    await expect(header).toContain("Introduction");
 })
